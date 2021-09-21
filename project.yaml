@@ -10,3 +10,12 @@ actions:
     outputs:
       highly_sensitive:
         cohort: output/input.feather
+  
+  generate_summary:
+    run: python:latest python analysis/summary.py
+    needs: [generate_study_population]
+    outputs:
+      moderately_sensitive:
+        table1: output/summary1.csv
+        table2: output/summary2.csv
+        table3: output/summary3.csv
