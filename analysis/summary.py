@@ -8,7 +8,7 @@ summary1 = df.groupby('practice_enrolled')["patient_id"].count()
 summary1.to_csv(os.path.join("output","summary1.csv"))
 print(summary1)
 
-df = df.loc[df['practice_enrolled']==True]
+df = df.loc[df['practice_enrolled']==1]
 summary2 = df.groupby('practice_trial_arm')["patient_id"].count()
 print(summary2)
 summary2.to_csv(os.path.join("output","summary2.csv"))
